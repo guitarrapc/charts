@@ -29,3 +29,4 @@ Workaround is fix access control with initContainer.
 ## REF
 
 > * [Persistent storage](https://cloud.ibm.com/docs/containers?topic=containers-cs_troubleshoot_storage#nonroot)
+> * [fsGroup securityContext does not apply to nfs mount · Issue \#260 · kubernetes/examples](https://github.com/kubernetes/examples/issues/260)
