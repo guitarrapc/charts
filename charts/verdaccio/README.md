@@ -1,4 +1,4 @@
-https://github.com/helm/charts/tree/master/stable/verdaccio with adding initContainer to fix NFS gid issue.
+see [CHANGE LOG](CHANGES.md) for change detail.
 
 # Verdaccio
 
