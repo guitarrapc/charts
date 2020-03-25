@@ -31,6 +31,7 @@ spec:
         app: {{ template "verdaccio.name" . }}
         release: {{ .Release.Name }}
     spec:
+      {{- if .Values.persistence.useFsgroupInitContainer}}
       initContainers:
         - name: nfs-fixer
           image: alpine
@@ -50,6 +51,7 @@ spec:
           - sh
           - -c
           - (chown {{ .Values.securityContext.runAsUser }} -R /verdaccio/storage;chgrp {{ .Values.securityContext.fsGroup }} -R /verdaccio/storage)
+      {{- end }}
       containers:
         - name: {{ template "verdaccio.name" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
